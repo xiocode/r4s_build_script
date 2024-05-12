@@ -1,8 +1,9 @@
 name: Build releases
 
 on:
-  watch:
-    types: started
+  push:
+    branches:
+    - master
 
 jobs:
   build:
