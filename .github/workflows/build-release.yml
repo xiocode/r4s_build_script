@@ -1,8 +1,9 @@
 name: Build releases
 
 on:
-  watch:
-    types: started
+  push:
+    branches:
+    - master
 
 jobs:
   build:
@@ -16,10 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         model:
-          - armv8
           - nanopi-r4s
-          - nanopi-r5s
-          - x86_64
         tag:
           - type: rc2
             version: openwrt-23.05
